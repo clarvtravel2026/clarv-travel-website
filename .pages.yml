@@ -22,9 +22,9 @@ content:
         label: Photos and Videos
         type: object
         list: true
-        fields:
-              - name: type
-            label: Media Type (type photo or video)
+        fields:            
+          - name: type
+            label: Media Type
             type: string
           - { name: title, label: Caption, type: string }
           - { name: src, label: Photo Upload, type: image }

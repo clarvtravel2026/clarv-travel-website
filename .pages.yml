@@ -24,11 +24,11 @@ content:
         list: true
         fields:
           - name: type
-            label: Media Type
-            type: select
-            options:
-              - { label: Photo, value: photo }
-              - { label: Video, value: video }
+  label: Media Type
+  type: select
+  options:
+    - Photo
+    - Video
           - { name: title, label: Caption, type: string }
           - { name: src, label: Photo Upload, type: image }
           - { name: video_url, label: YouTube Embed URL, type: string }

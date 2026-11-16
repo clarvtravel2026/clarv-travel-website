@@ -1,17 +1,19 @@
+
 {
   "packages": [
     {
       "title": "Hong Kong Group Tour",
       "tag": "INTERNATIONAL",
-      "description": "Discover Hong Kong with CLARV Travel and Business Center! \nContact us for updated tour schedules, package inclusions, rates and availability.",
+      "description": "Discover Hong Kong with CLARV Travel and Business Center! Contact us for updated tour schedules, package inclusions, rates and availability.",
       "image": "/assets/uploads/hk package-1.jpg",
       "price": "Inquire for latest rates"
     }
   ],
   "gallery": [
-  {
-    "type": "photo",
-    "title": "Explore Hong Kong with CLARV Travel and Business Center!",
-    "src": "/assets/uploads/hk package-1.jpg"
-  }
-]
+    {
+      "type": "photo",
+      "title": "Explore Hong Kong with CLARV Travel and Business Center!",
+      "src": "/assets/uploads/hk package-1.jpg"
+    }
+  ]
+}

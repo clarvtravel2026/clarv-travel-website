@@ -30,4 +30,6 @@ content:
               - { label: Photo, value: photo }
               - { label: Video, value: video }
           - { name: title, label: Caption, type: string }
-          - { name: src, label: Photo URL or YouTube Embed URL, type: string }
+          - { name: src, label: Photo Upload, type: image }
+          - { name: video_url, label: YouTube Embed URL, type: string }
+

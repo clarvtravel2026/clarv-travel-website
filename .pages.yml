@@ -23,10 +23,9 @@ content:
         type: object
         list: true
         fields:
-          - name: type
-  label: Media Type
-  type: select
-  options:
+         - name: type
+  label: Media Type (type photo or video)
+  type: string
     - Photo
     - Video
           - { name: title, label: Caption, type: string }

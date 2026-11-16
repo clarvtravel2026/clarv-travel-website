@@ -1,0 +1,13 @@
+let content={packages:[],gallery:[]};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const packageGrid=document.getElementById('packageGrid');
+function drawPackages(){packageGrid.innerHTML=content.packages.map(p=>`<article class="package-card"><img loading="lazy" src="${esc(p.image)}" alt="${esc(p.title)}"><div class="package-body"><div class="tag">${esc(p.tag)}</div><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><div class="package-foot"><strong>${esc(p.price)}</strong><a href="#contact">Inquire →</a></div></div></article>`).join('')}
+const galleryGrid=document.getElementById('galleryGrid');
+function drawGallery(filter='all'){galleryGrid.innerHTML=content.gallery.filter(g=>filter==='all'||g.type===filter).map(g=>g.type==='video'?`<article class="gallery-item"><iframe loading="lazy" src="${esc(g.src)}" title="${esc(g.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><div>${esc(g.title)}</div></article>`:`<article class="gallery-item"><img loading="lazy" src="${esc(g.src)}" alt="${esc(g.title)}"><div>${esc(g.title)}</div></article>`).join('')||'<p>No items yet. Add photos or videos in content.js.</p>'}
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');drawGallery(b.dataset.filter)}));
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('menu').addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('open'));
+document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
+document.getElementById('inquiryForm').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.currentTarget);const subject='CLARV Travel Inquiry — '+d.get('destination');const body=`Name: ${d.get('name')}\nEmail: ${d.get('email')}\nDestination: ${d.get('destination')}\nTravel date: ${d.get('date')}\n\nMessage:\n${d.get('message')}`;window.location.href='mailto:clarvtravel@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)});
+
+fetch('content.json', {cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Content unavailable');return r.json()}).then(data=>{content=data;drawPackages();drawGallery()}).catch(()=>{packageGrid.innerHTML='<p>Travel packages will appear when the website is published.</p>';galleryGrid.innerHTML='<p>Gallery will appear when the website is published.</p>'});

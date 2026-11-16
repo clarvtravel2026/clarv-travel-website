@@ -1,0 +1,33 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+content:
+  - name: website_content
+    label: CLARV Website Content
+    type: file
+    path: content.json
+    format: json
+    fields:
+      - name: packages
+        label: Travel Packages
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Package Name, type: string, required: true }
+          - { name: tag, label: Category, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: image, label: Package Photo, type: image }
+          - { name: price, label: Price / Inquiry Text, type: string }
+      - name: gallery
+        label: Photos and Videos
+        type: object
+        list: true
+        fields:
+          - name: type
+            label: Media Type
+            type: select
+            options:
+              - { label: Photo, value: photo }
+              - { label: Video, value: video }
+          - { name: title, label: Caption, type: string }
+          - { name: src, label: Photo URL or YouTube Embed URL, type: string }

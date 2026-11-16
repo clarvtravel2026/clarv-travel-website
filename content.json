@@ -1,0 +1,12 @@
+{
+  "packages": [
+    {"title":"Hong Kong Group Tour","tag":"INTERNATIONAL","description":"Discover Hong Kong with CLARV. Ask us about current schedules, package inclusions and availability.","image":"https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=1100&q=85","price":"Inquire for latest rates"},
+    {"title":"Domestic Adventures","tag":"PHILIPPINES","description":"Explore beautiful destinations across the Philippines. Contact our team for available offers.","image":"https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1100&q=85","price":"Ask for packages"},
+    {"title":"Custom Travel Planning","tag":"YOUR NEXT TRIP","description":"Planning a getaway? Tell us your preferred destination, travel dates, and number of travelers.","image":"https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1100&q=85","price":"Request a quote"}
+  ],
+  "gallery": [
+    {"type":"photo","title":"Travel Inspiration","src":"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&q=85"},
+    {"type":"photo","title":"City Adventures","src":"https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1000&q=85"},
+    {"type":"photo","title":"Beautiful Destinations","src":"https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1000&q=85"}
+  ]
+}
